@@ -78,6 +78,33 @@
       font-size: 0.8rem;
       font-weight: 600;
     }
+
+    /* Screenshot Gallery */
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+  }
+    .screenshot-card {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 0.6rem;
+      text-align: center;
+  }
+    .screenshot-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      display: block;
+  }
+    .screenshot-card figcaption {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-top: 0.5rem;
+  }
+
     .project-card p { color: var(--muted); margin-bottom: 1rem; }
     .project-card ul { margin-left: 1.25rem; color: var(--text); margin-bottom: 1.25rem; }
     .project-card li { margin-bottom: 0.45rem; }
@@ -135,7 +162,7 @@
       <h2>Featured Project</h2>
       <div class="project-card">
         <div class="project-header">
-          <div class="project-title">MTG Match Tracker (v1.0.0)</div>
+          <div class="project-title">MTG Match Tracker (v1.1.0)</div>
           <span class="badge">Shipped &bull; Windows Installer</span>
         </div>
         <p>
@@ -146,8 +173,24 @@
           <li><strong>Live JSON Log Parser (<code>arena_parser.py</code>):</strong> Automatically scans <code>Player.log</code> JSON events to extract deck names, formats, turn counts, and match results in one click.</li>
           <li><strong>Multi-Tier Analytics Engine:</strong> Aggregates CSV match ledgers via <code>pandas</code> to compute win rates, mana-curve efficiency ratios, and opponent nemesis trends.</li>
           <li><strong>Production Packaging:</strong> Compiled into a standalone <code>.exe</code> with PyInstaller and wrapped in an Inno Setup Windows installer using <code>%LOCALAPPDATA%</code> user-profile storage.</li>
+          <li><strong>10-Guild Dynamic Theme Engine:</strong> Data-driven Ravnica guild palettes, custom fonts, and taglines persisted across sessions via <code>config.json</code>.</li>
         </ul>
-        <div class="tags">
+        <!-- Inside Featured Project card -->
+      <div class="screenshot-grid">
+        <figure class="screenshot-card">
+          <img src="images/tracker-orzhov.png" alt="MTG Match Tracker Orzhov Syndicate Theme">
+          <figcaption>Orzhov Syndicate (Default Theme)</figcaption>
+        </figure>
+        <figure class="screenshot-card">
+          <img src="images/tracker-izzet.png" alt="MTG Match Tracker Izzet League Theme">
+          <figcaption>Izzet League Theme &amp; Live Entry</figcaption>
+        </figure>
+        <figure class="screenshot-card">
+          <img src="images/tracker-analytics.png" alt="Season Match Analytics Report">
+          <figcaption>Season Match Analytics Report</figcaption>
+        </figure>
+      </div>
+          <div class="tags">
           <span class="tag">Python 3.14</span>
           <span class="tag">pandas</span>
           <span class="tag">tkinter</span>
